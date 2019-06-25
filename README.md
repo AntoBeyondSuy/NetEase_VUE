@@ -159,21 +159,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-## 交流
-
-欢迎热爱学习、忠于分享的胖友一起来交流
-
-- QQ：745913574
-
-- QQ群：149683643
-
-- WeChat
-
-<img src="https://p0.meituan.net/dpgroup/749d8a79cd0a9bbc4e25b2f474a398d91256770.png?" width="25%">
-
-
-## Donation
-
-If you find this project useful, you can buy me a cup of coffee
-
-<img width="650" src="https://static.oschina.net/uploads/space/2017/0223/201225_oQrz_2493500.jpeg" alt="">
