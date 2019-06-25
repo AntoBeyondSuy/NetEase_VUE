@@ -1,5 +1,4 @@
 <!-- 散点图 -->
-<!-- 对应项目中的 地图表 -->
 <template lang="html">
 <div class="heat">
   <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
@@ -113,7 +112,7 @@ export default {
 
 <style lang="stylus" scoped>
 .heat
-  height 800px
+  height 8000px
   .main
     height 400px
 </style>

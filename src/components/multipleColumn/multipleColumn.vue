@@ -1,4 +1,5 @@
-<!-- 折线图 -->
+<!-- 复杂柱状图 -->
+<!-- 对应网页中的两层的柱状图 -->
 <style lang="stylus" scoped>
 .multipleColumn
   height 1000px
@@ -151,7 +152,7 @@ export default {
         barWidth: 16,
         barGap: 0
       }, {
-        name: '标签6',
+        name: '这是哪个宝宝呢？',
         stack: 'stack3',
         type: 'bar',
         data: [2.0, 3.4, 8],

@@ -1,4 +1,5 @@
 <!-- 柱状图 -->
+<!-- 对应网页中的一层柱状图 -->
 <style lang="stylus" scoped>
 .columnChart
   height 800px
@@ -145,7 +146,7 @@ export default {
         barWidth: 16,
         barGap: 0
       }, {
-        name: '标签6',
+        name: '一层柱状图！',
         type: 'bar',
         data: [2.0, 3.4],
         barWidth: 16,
