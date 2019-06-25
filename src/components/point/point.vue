@@ -65,8 +65,14 @@ export default {
     },
     convertData(data) {
       let res = [];
+      /*
+       * 这里是从 json 中随机取 4 个城市出来
+       * 随机方式是先获取数据总长度，然后乘[0,1)随机数，取整x，选第x个数据
+       */
+      /* 在这里 i<4 限定了每个标签只有 4 个城市 */
       for (let i = 0; i < 4; i++) {
         let l = data.length
+        /* Math.random() [0,1) */
         let x = parseInt(Math.random() * l)
         let geoCoord = this.geoCoordMap[data[x].name]
           // let geoCoord = this.geoCoordMap[data[i].name];
@@ -174,7 +180,7 @@ export default {
             },
             data: this.convertData(res.data)
           }, {
-            name: '标签3',
+            name: '第3个标签！',
             type: 'scatter',
             coordinateSystem: 'geo',
             symbolSize: function(val) {

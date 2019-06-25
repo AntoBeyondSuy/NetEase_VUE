@@ -210,7 +210,7 @@
       <tr v-for="(day,dayIndex) in days">
         <td v-for="(child,childIndex) in day" :class="{'selected':child.selected,'disabled':child.disabled}" @click="select(dayIndex,childIndex,$event)" @touchstart="select(k1,k2,$event)">
           <span>{{child.day}}</span>
-          <div class="lunar" v-if="showLunar">{{child.lunar}}</div>
+           <div class="lunar" v-if="showLunar">{{child.lunar}}</div>
         </td>
       </tr>
     </table>
@@ -231,10 +231,10 @@
 </template>
 
 <script>
-import propsync from '../../assets/propsync'; //引入mixin文件
+import propsync from '../../assets/propsync'; // 引入mixin文件
 
 export default {
-  mixins: [propsync], //声明使用propsync的mixin
+  mixins: [propsync], // 声明使用propsync的mixin
   props: {
     show: {
       type: Boolean,
@@ -349,12 +349,12 @@ export default {
         if (this.p_value.indexOf("-") !== -1) this.sep = "-"
         if (this.p_value.indexOf(".") !== -1) this.sep = "."
         if (this.p_value.indexOf("/") !== -1) this.sep = "/"
-        if (this.type == "date") {
+        if (this.type === "date") {
           var split = this.p_value.split(this.sep)
           this.year = parseInt(split[0])
           this.month = parseInt(split[1]) - 1
           this.day = parseInt(split[2])
-        } else if (this.type == "datetime") {
+        } else if (this.type === "datetime") {
           var split = this.p_value.split(" ")
           var splitDate = split[0].split(this.sep)
           this.year = parseInt(splitDate[0])
@@ -377,7 +377,7 @@ export default {
           }
         }
       } else {
-        if (this.sep == "") this.sep = "/"
+        if (this.sep === "") this.sep = "/"
         this.year = now.getFullYear()
         this.month = now.getMonth()
         this.day = now.getDate()
@@ -398,9 +398,9 @@ export default {
         this.rangeBegin = []
         this.rangeEnd = []
       }
-      var firstDayOfMonth = new Date(y, m, 1).getDay() //当月第一天
-      var lastDateOfMonth = new Date(y, m + 1, 0).getDate() //当月最后一天
-      var lastDayOfLastMonth = new Date(y, m, 0).getDate() //最后一月的最后一天
+      var firstDayOfMonth = new Date(y, m, 1).getDay() // 当月第一天
+      var lastDateOfMonth = new Date(y, m + 1, 0).getDate() // 当月最后一天
+      var lastDayOfLastMonth = new Date(y, m, 0).getDate() // 最后一月的最后一天
       this.year = y
       this.currentMonth = this.months[m]
       var seletSplit = this.p_value.split(" ")[0].split(this.sep)
@@ -410,9 +410,9 @@ export default {
       for (i = 1; i <= lastDateOfMonth; i++) {
         var dow = new Date(y, m, i).getDay()
           // 第一行
-        if (dow == 0) {
+        if (dow === 0) {
           temp[line] = []
-        } else if (i == 1) {
+        } else if (i === 1) {
           temp[line] = []
           var k = lastDayOfLastMonth - firstDayOfMonth + 1
           for (var j = 0; j < firstDayOfMonth; j++) {

@@ -1,4 +1,5 @@
 <!-- 散点图 -->
+<!-- 对应项目中的 地图表 -->
 <template lang="html">
 <div class="heat">
   <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
@@ -35,6 +36,7 @@ export default {
       })
     },
     _getCityData() {
+      /* 获取城市坐标 */
       axios.get('static/data/cityData.json').then((res) => {
         this.geoCoordMap = res.data
       })
@@ -54,6 +56,7 @@ export default {
     'v-header': header
   },
   mounted() {
+    /* 获取城市空气指数值 */
     axios.get('static/data/heat/testData.json').then((res) => {
       let options = {
         title: {
