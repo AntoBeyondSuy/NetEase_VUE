@@ -108,7 +108,7 @@
             },
             visualMap: {
               bottom: 30,
-              left: 200,
+              left: 50,
               itemSymbol: 'roundRect',
               pieces: [
                 {gt: 10000},              // (1500, Infinity]

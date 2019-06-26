@@ -31,7 +31,7 @@ export default {
       legendArr: [],
       color: this.$store.state.color,
       myChart: {},
-      name: '人气分析'
+      name: '认证账户人气分析'
     }
   },
   methods: {

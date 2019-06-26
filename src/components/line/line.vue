@@ -1,4 +1,4 @@
-<!-- 层叠柱状图 -->
+<!-- 折线图 -->
 <style lang="stylus" scoped>
 .line
   height 1000px
@@ -30,7 +30,7 @@ export default {
       legendArr: [],
       color: this.$store.state.color,
       myChart: {},
-      name: '等级分析'
+      name: '用户群体等级分析'
     }
   },
   methods: {
