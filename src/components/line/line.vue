@@ -30,7 +30,7 @@ export default {
       legendArr: [],
       color: this.$store.state.color,
       myChart: {},
-      name: '用户群体等级分析'
+      name: '等级分析'
     }
   },
   methods: {
