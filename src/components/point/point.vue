@@ -41,7 +41,7 @@
         color: this.$store.state.color,
         myChart: {},
         geoCoordMap: {},
-        name: '网易云音乐 - 用户地域分布'
+        name: '用户地域分布'
       }
     },
     methods: {
@@ -111,14 +111,14 @@
               left: 200,
               itemSymbol: 'roundRect',
               pieces: [
-                {gt: 10000},            // (1500, Infinity]
-                {gt: 2000, lte: 10000},  // (2000, 10000]
-                {gt: 500, lte: 2000},  // (500, 2000]
-                {gt: 200, lte: 500},  // (200, 500]
-                {gt: 100, lte: 200},  // (100, 200]
-                {gt: 50, lte: 100},   // (50, 100]
-                {gt: 20, lte: 50},       // (20, 50]
-                {gt: 0, lte: 20}                 // (-Infinity, 5)
+                {gt: 10000},              // (1500, Infinity]
+                {gt: 2000, lte: 10000},   // (2000, 10000]
+                {gt: 500, lte: 2000},     // (500, 2000]
+                {gt: 200, lte: 500},      // (200, 500]
+                {gt: 100, lte: 200},      // (100, 200]
+                {gt: 50, lte: 100},       // (50, 100]
+                {gt: 20, lte: 50},        // (20, 50]
+                {gt: 0, lte: 20}          // (0, 5)
               ],
               splitNumber: 8,
               inRange: {

@@ -3,7 +3,7 @@
   position relative
   display flex
   padding 10px 0 0 28px
-  font-size 12px
+  font-size 14px
   line-height 11px
   color white
   z-index 9999
@@ -73,9 +73,28 @@
         text-overflow ellipsis
         width 70px
 </style>
-<!--<template lang="html" scoped>
+<template lang="html" scoped>
   <div class="filter">
-    <div class="startTime">
+
+    <div class="product-wrapper" v-show="showProduct">
+      <div class="products">
+        <div class="all" @click="selectAll()" v-show="pro_filter_flag">
+          <checkbox :isChecked="selectAll_flag"></checkbox>
+          全选
+        </div>
+        <div class="pro" @click="showProPane()">
+          选择<i class="arrow"></i>
+        </div>
+      </div>
+      <div class="pro_list" v-show="pro_filter_flag">
+        <ul>
+          <li v-for="(pro,index) in pro_list" @click="pro_toggle(pro,index)"><checkbox :isChecked="pro.selected"></checkbox><span class="name">{{pro.name}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<!--    <div class="startTime">
       <span class="timeText">起始时间</span>
       <el-date-picker
         v-model="startDate"
@@ -92,26 +111,7 @@
         placeholder="选择日期">
       </el-date-picker>
       <div class="myCalendar"></div>
-    </div>
-    <div class="product-wrapper" v-show="showProduct">
-      <div class="products">
-        <div class="all" @click="selectAll()" v-show="pro_filter_flag">
-          <checkbox :isChecked="selectAll_flag"></checkbox>
-          全选
-        </div>
-        <div class="pro" @click="showProPane()">
-          产品<i class="arrow"></i>
-        </div>
-      </div>
-      <div class="pro_list" v-show="pro_filter_flag">
-        <ul>
-          <li v-for="(pro,index) in pro_list" @click="pro_toggle(pro,index)"><checkbox :isChecked="pro.selected"></checkbox><span class="name">{{pro.name}}</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</template>-->
-
+    </div>-->
 <script>
 import checkbox from 'components/checkbox/checkbox'
 
@@ -122,20 +122,7 @@ export default {
       default: {}
     }
   },
-  data() {
-    return {
-      startDate: '2015.12.04',
-      endDate: '2016.01.15',
-      pro_filter_flag: false,
-      selectAll_flag: true,
-      pro_list: [],
-      option: {},
-      resetOption: {}, // 存储最开始的数据,
-      preClass: '',
-      showProduct: false,
-      showTime: false
-    }
-  },
+
   mounted() {
     this._init()
   },
@@ -220,3 +207,17 @@ export default {
 }
 
 </script>
+/*  data() {
+return {
+startDate: '2015.12.04',
+endDate: '2016.01.15',
+pro_filter_flag: false,
+selectAll_flag: true,
+pro_list: [],
+option: {},
+resetOption: {}, // 存储最开始的数据,
+preClass: '',
+showProduct: false,
+showTime: false
+}
+},*/

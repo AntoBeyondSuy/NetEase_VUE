@@ -1,5 +1,4 @@
-<!-- 对应网页的折线图 -->
-<!-- 不是读取json文件，而是在本文档内写好数据 -->
+<!-- 层叠柱状图 -->
 <style lang="stylus" scoped>
 .line
   height 1000px
@@ -31,7 +30,7 @@ export default {
       legendArr: [],
       color: this.$store.state.color,
       myChart: {},
-      name: '折线图'
+      name: '用户群体等级分析'
     }
   },
   methods: {
@@ -40,8 +39,7 @@ export default {
       this.legendArr.forEach((data) => {
         data.selected = true;
       })
-      this.$root.charts.push(this.myChart)
-      window.addEventListener('resize', function() {
+      this.$root.charts.push(this.myChart)('resize', function() {
         this.myChart.resize()
       }.bind(this))
     }
@@ -69,7 +67,7 @@ export default {
       color: this.color,
       calculable: true,
       xAxis: [{
-        name: '产品',
+        name: '网易云等级',
         type: 'category',
         axisLine: {
           show: false
@@ -85,7 +83,7 @@ export default {
             color: 'white'
           }
         },
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        data: ['等级零-二', '等级三-四', '等级五-六', '等级七-八', '等级九-十']
       }],
       yAxis: [{
         axisLine: {
@@ -108,17 +106,32 @@ export default {
             fontSize: 14
           }
         },
-        name: '数量',
+        name: '用户数',
         type: 'value',
         nameTextStyle: {
           color: 'rgba(255, 255, 255, 0.69)'
         }
       }],
       series: [{
-        name: '标签3',
+        name: '男性',
         type: 'line',
-        stack: '总量',
-        data: [150, 232, 201, 154, 190, 330, 410]
+        data: [3956, 3001, 6779, 7217, 783]
+      }, {
+        name: '女性',
+        type: 'line',
+        data: [2397, 3236, 14865, 30390, 3229]
+      }, {
+        name: '总人数',
+        type: 'line',
+        data: [6353, 6237, 21644, 37607, 5012]
+      }, {
+        name: '平均听歌数',
+        type: 'line',
+        data: [31, 164, 544, 3296, 18622]
+      }, {
+        name: 'VIP',
+        type: 'line',
+        data: [182, 368, 2731, 11867, 2616]
       }]
     });
     this._init()
@@ -126,27 +139,3 @@ export default {
 }
 
 </script>
-
-/*{
-name: '标签1',
-type: 'line',
-stack: '总量',
-data: [120, 132, 101, 134, 90, 230, 210]
-}, {
-name: '标签2',
-type: 'line',
-stack: '总量',
-data: [220, 182, 191, 234, 290, 330, 310]
-}, */
-
-/*, {
-name: '标签4',
-type: 'line',
-stack: '总量',
-data: [320, 332, 301, 334, 390, 330, 320]
-}, {
-name: '标签5',
-type: 'line',
-stack: '总量',
-data: [820, 932, 901, 934, 1290, 1330, 1320]
-}*/
