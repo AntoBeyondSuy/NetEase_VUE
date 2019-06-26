@@ -11,15 +11,17 @@ import dashboard from 'components/dashboard/dashboard'
 import multipleColumn from 'components/multipleColumn/multipleColumn'
 import {DatePicker} from 'element-ui'
 
-Vue.component(DatePicker.name, DatePicker)
+Vue.component(DatePicker.name, DatePicker);
 
-Vue.use(VueRouer)
-Vue.use(Vuex)
+Vue.use(VueRouer);
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
     count: 0,
-    color: ['#325B69', '#698570', '#AE5548', '#6D9EA8', '#9CC2B0', '#C98769']
+    color: ['#cc1b12', '#cc332b', '#cc5a56',
+      '#cc7673', '#cc9495', '#ccb7bf',
+      '#b0becc', '#90b9cc']
   }
 });
 const router = new VueRouer({
@@ -46,7 +48,7 @@ const router = new VueRouer({
     component: line
   }],
   linkActiveClass: 'active'
-})
+});
 new Vue({
   router,
   store,
@@ -58,6 +60,6 @@ new Vue({
     eventHub: new Vue(),
     charts: []
   }
-}).$mount('#app')
+}).$mount('#app');
 
-router.push('dashboard')
+router.push('dashboard');

@@ -52,20 +52,20 @@ export default {
       })
     },
     legendToggle(legend) {
-      legend.selected = !legend.selected
+      legend.selected = !legend.selected;
       this.myChart.dispatchAction({
         type: 'legendToggleSelect',
         name: legend.name
-      })
+      });
       this.changeStyle()
     },
     changeStyle() {
       this.legendArr.forEach((data, index) => {
         if (data.selected) {
-          this.styleArr[index].background = this.color[index]
+          this.styleArr[index].background = this.color[index];
           this.styleArr[index].border = '1px solid' + this.color[index]
         } else {
-          this.styleArr[index].background = 'transparent'
+          this.styleArr[index].background = 'transparent';
           this.styleArr[index].border = '1px solid #9C8C84'
         }
       })
@@ -85,7 +85,7 @@ export default {
   color white
   width 100%
   h1
-    flex 0 0 120px
+    flex 0 0 280px
     font-size 21px
     font-weight bold
     padding-left 20px
