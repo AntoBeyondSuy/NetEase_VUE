@@ -1,5 +1,4 @@
 <!-- 柱状图 -->
-<!-- 对应网页中的一层柱状图 -->
 <style lang="stylus" scoped>
 .columnChart
   height 800px
@@ -32,7 +31,7 @@ export default {
       legendArr: [],
       color: this.$store.state.color,
       myChart: {},
-      name: '柱状图'
+      name: '人气分析'
     }
   },
   methods: {
@@ -70,7 +69,7 @@ export default {
       color: this.color,
       calculable: true,
       xAxis: [{
-        name: '产品',
+        name: '用户',
         type: 'category',
         axisLine: {
           show: false
@@ -82,11 +81,13 @@ export default {
           color: 'rgba(255, 255, 255, 0.69)'
         },
         axisLabel: {
+          interval: 0,
+          rotate: 40,
           textStyle: {
             color: 'white'
           }
         },
-        data: ['产品1', '产品2']
+        data: ['云音乐VIP', '薛之谦', '花粥本人', '陈粒', 'GEM邓紫棋', 'TroyeSivan', '许嵩', '房东的猫房东的猫', '音乐人徐梦圆', 'EdSheeran']
       }],
       yAxis: [{
         axisLine: {
@@ -109,46 +110,16 @@ export default {
             fontSize: 14
           }
         },
-        name: '数量',
+        name: '粉丝数',
         type: 'value',
         nameTextStyle: {
           color: 'rgba(255, 255, 255, 0.69)'
         }
       }],
       series: [{
-        name: '标签1',
+        name: '人气',
         type: 'bar',
-        data: [2.0, 4.9],
-        barWidth: 16,
-        barGap: 0
-      }, {
-        name: '标签2',
-        type: 'bar',
-        data: [2.6, 5.9],
-        barWidth: 16,
-        barGap: 0
-      }, {
-        name: '标签3',
-        type: 'bar',
-        data: [2.0, 6.4],
-        barWidth: 16,
-        barGap: 0
-      }, {
-        name: '标签4',
-        type: 'bar',
-        data: [4.0, 5.9],
-        barWidth: 16,
-        barGap: 0
-      }, {
-        name: '标签5',
-        type: 'bar',
-        data: [5.6, 4.9],
-        barWidth: 16,
-        barGap: 0
-      }, {
-        name: '一层柱状图！',
-        type: 'bar',
-        data: [2.0, 3.4],
+        data: [9740093, 6829229, 5390125, 3227932, 2908200, 2799985, 2389310, 2190790, 2027891, 1948682],
         barWidth: 16,
         barGap: 0
       }]
