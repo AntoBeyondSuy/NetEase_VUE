@@ -15,14 +15,10 @@
 - echarts _一款丰富的图表库_
 - webpack、ES6、Babel、Stylus...
 
-# 演示
-
-<div align=center style="margin-top:30px">此项目为PC端数据可视化，请在电脑端查看</div>
-<div align=center><a href="https://simonzhangiter.github.io/DataVisualization" target=_blank>在线演示戳我</a></div>
 
 # 项目截图
 
-<div align=center><img src="https://github.com/SimonZhangITer/DataVisualization/blob/master/static/img/demo.jpg?raw=true"></div>
+<div align=center><img src="https://github.com/AntoBeyondSuy/NetEase_VUE/blob/master/static/img/demo.jpg?raw=true"></div>
 
 # 开发
 
